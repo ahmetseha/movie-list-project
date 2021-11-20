@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px;
+  grid-gap: 40px;
+}
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+}

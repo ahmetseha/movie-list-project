@@ -1,7 +1,11 @@
-import React from "react";
+import styles from "./Banner.module.scss";
 
 const Banner = () => {
-  return <div></div>;
+  return (
+    <div className={styles.container}>
+      <img src="" alt="" />
+    </div>
+  );
 };
 
 export default Banner;

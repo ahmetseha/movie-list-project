@@ -1,19 +1,22 @@
 .container {
-  height: 90px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   background-color: #f2b138;
   font-weight: 600;
-  .logo {
-    font-size: 28px;
-  }
-  .menu {
-    .items {
-      display: flex;
-      grid-gap: 70px;
-      .item {
-        font-size: 18px;
+  width: 100%;
+  .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    .logo {
+      font-size: 28px;
+    }
+    .menu {
+      .items {
+        display: flex;
+        grid-gap: 70px;
+        .item {
+          font-size: 18px;
+        }
       }
     }
   }

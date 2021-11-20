@@ -16,3 +16,12 @@ ul,
 li {
   list-style-type: none;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  .content {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+}
