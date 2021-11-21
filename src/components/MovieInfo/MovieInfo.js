@@ -35,28 +35,32 @@ const MovieInfo = () => {
               />
             </div>
             <div className={styles.detail}>
-              <div className={styles.head}>
-                <p>{movieInfoData.title}</p>
-                <p>{movieInfoData.release_date}</p>
-              </div>
-              <div className={styles.companies}>
-                <h3 className={styles.componiesHead}> Companies:</h3>
-                {movieInfoData.production_companies &&
-                  movieInfoData.production_companies.map((company) => {
-                    return <p key={company.id}>{company.name}</p>;
-                  })}
-              </div>
-              <div className={styles.genres}>
-                <h3>Categories:</h3>
-                {movieInfoData.genres &&
-                  movieInfoData.genres.map((genre) => {
-                    return <p key={genre.id}>{genre.name}</p>;
-                  })}
+              <div className={styles.firstDetail}>
+                <div className={styles.head}>
+                  <p>{movieInfoData.title}</p>
+                  <p>{movieInfoData.release_date}</p>
+                </div>
+                <div className={styles.companies}>
+                  <h3 className={styles.componiesHead}> Companies:</h3>
+                  {movieInfoData.production_companies &&
+                    movieInfoData.production_companies.map((company) => {
+                      return <p key={company.id}>{company.name}</p>;
+                    })}
+                </div>
+                <div className={styles.genres}>
+                  <h3>Categories:</h3>
+                  {movieInfoData.genres &&
+                    movieInfoData.genres.map((genre) => {
+                      return <p key={genre.id}>{genre.name}</p>;
+                    })}
+                </div>
               </div>
               <div className={styles.voteAndCount}>
                 <h3>IMDb Rating:</h3>
-                <p className={styles.vote}>{movieInfoData.vote_average}/10</p>
-                <p className={styles.count}>{movieInfoData.vote_count}</p>
+                <div className={styles.rating}>
+                  <p className={styles.vote}>{movieInfoData.vote_average}/10</p>
+                  <p className={styles.count}>{movieInfoData.vote_count}</p>
+                </div>
               </div>
             </div>
           </div>

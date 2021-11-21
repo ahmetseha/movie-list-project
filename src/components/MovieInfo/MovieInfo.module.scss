@@ -19,35 +19,47 @@
     grid-gap: 20px;
     padding: 30px;
     width: 50%;
-    .head {
+    h3 {
+      color: #353d40;
+      margin-right: 10px;
+    }
+    .firstDetail {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      grid-gap: 20px;
+      flex: 1;
+      .head {
+        display: flex;
+        justify-content: space-between;
+      }
+      .companies,
+      .genres {
+        display: flex;
+        flex-wrap: wrap;
+        p + p::before {
+          content: ", ";
+        }
+      }
+    }
+    .voteAndCount {
       display: flex;
       justify-content: space-between;
-    }
-    .companies,
-    .genres {
-      display: flex;
-      flex-wrap: wrap;
-      p + p::before {
-        content: ", ";
+      align-items: center;
+      grid-gap: 15px;
+      .rating {
+        display: flex;
+        grid-gap: 10px;
+        .vote,
+        .count {
+          text-align: end;
+          color: #353d40;
+        }
       }
-      .componiesHead {
-        color: #353d40;
-        margin-right: 10px;
-      }
-    }
-  }
-  .voteAndCount {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    grid-gap: 15px;
-    .vote,
-    .count {
-      text-align: end;
-      color: #353d40;
     }
   }
   .summary {
+    margin-top: 80px;
     .summaryHead {
       margin-bottom: 10px;
     }
