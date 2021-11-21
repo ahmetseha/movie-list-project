@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
 
 import styles from "./MovieCard.module.scss";
 
@@ -27,7 +28,10 @@ const MovieCard = (props) => {
                 </div>
                 <div className={styles.movieName}>{movie.original_title}</div>
                 <div className={styles.release}>{movie.release_date}</div>
-                <div className={styles.imdb}>{movie.vote_average}</div>
+                <div className={styles.imdb}>
+                  <AiFillStar />
+                  {movie.vote_average}
+                </div>
               </div>
             </Link>
           );

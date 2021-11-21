@@ -49,11 +49,18 @@
       grid-gap: 15px;
       .rating {
         display: flex;
+        align-items: center;
         grid-gap: 10px;
+        svg {
+          color: #f2b138;
+        }
         .vote,
         .count {
           text-align: end;
           color: #353d40;
+        }
+        span {
+          color: #003f63;
         }
       }
     }

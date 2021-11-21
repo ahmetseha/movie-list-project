@@ -34,7 +34,13 @@
       font-size: 13px;
     }
     .imdb {
+      display: flex;
+      align-items: center;
+      grid-gap: 5px;
       font-size: 13px;
+      svg {
+        color: #f2b138;
+      }
     }
   }
 }

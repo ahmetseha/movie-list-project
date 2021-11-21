@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { AiFillStar } from "react-icons/ai";
 
 import styles from "./MovieInfo.module.scss";
 import { getMovieInfo } from "../../api/appAxios";
@@ -58,8 +59,8 @@ const MovieInfo = () => {
               <div className={styles.voteAndCount}>
                 <h3>IMDb Rating:</h3>
                 <div className={styles.rating}>
+                  <AiFillStar />
                   <p className={styles.vote}>{movieInfoData.vote_average}/10</p>
-                  <p className={styles.count}>{movieInfoData.vote_count}</p>
                 </div>
               </div>
             </div>
