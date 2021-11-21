@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #003f63;
+  margin: 40px 0;
+  padding: 30px;
+  border-radius: 25px;
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    p {
+      color: #f2b138;
+      width: 60%;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .content,
+  p {
+    width: 90% !important;
+  }
+}
+@media (max-width: 500px) {
+  p {
+    font-size: 80% !important;
+  }
+}
