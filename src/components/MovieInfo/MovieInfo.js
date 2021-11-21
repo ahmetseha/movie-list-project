@@ -19,47 +19,54 @@ const MovieInfo = () => {
         setLoading(false);
       });
   }, [slug]);
+
   return (
-    <div className={styles.container}>
-      {loading && <div className={styles.loading}>Loading...</div>}
-      <div className={styles.infoHead}>
-        <div className={styles.image}>
-          <img
-            src={`${movieInfoImage}${movieInfoData?.backdrop_path}`}
-            alt={movieInfoData.title}
-          />
+    <>
+      {loading ? (
+        <div className={styles.loading}>Loading...</div>
+      ) : (
+        <div className={styles.container}>
+          <div className={styles.infoHead}>
+            <div className={styles.image}>
+              <img
+                className={styles.movieInfoImage}
+                src={`${movieInfoImage}${movieInfoData?.backdrop_path}`}
+                alt={movieInfoData.title}
+              />
+            </div>
+            <div className={styles.detail}>
+              <div className={styles.head}>
+                <p>{movieInfoData.title}</p>
+                <p>{movieInfoData.release_date}</p>
+              </div>
+              <div className={styles.companies}>
+                <h3 className={styles.componiesHead}> Companies:</h3>
+                {movieInfoData.production_companies &&
+                  movieInfoData.production_companies.map((company) => {
+                    return <p key={company.id}>{company.name}</p>;
+                  })}
+              </div>
+              <div className={styles.genres}>
+                <h3>Categories:</h3>
+                {movieInfoData.genres &&
+                  movieInfoData.genres.map((genre) => {
+                    return <p key={genre.id}>{genre.name}</p>;
+                  })}
+              </div>
+              <div className={styles.voteAndCount}>
+                <h3>IMDb Rating:</h3>
+                <p className={styles.vote}>{movieInfoData.vote_average}/10</p>
+                <p className={styles.count}>{movieInfoData.vote_count}</p>
+              </div>
+            </div>
+          </div>
+          <div className={styles.summary}>
+            <h3 className={styles.summaryHead}>Summary</h3>
+            <p>{movieInfoData.overview}</p>
+          </div>
         </div>
-        <div className={styles.detail}>
-          <div className={styles.head}>
-            <p>{movieInfoData.title}</p>
-            <p>{movieInfoData.release_date}</p>
-          </div>
-          <div className={styles.companies}>
-            <h3> Companies:</h3>
-            {movieInfoData.production_companies &&
-              movieInfoData.production_companies.map((company) => {
-                return <p key={company.id}>{company.name}</p>;
-              })}
-          </div>
-          <div className={styles.genres}>
-            <h3>Categories:</h3>
-            {movieInfoData.genres &&
-              movieInfoData.genres.map((genre) => {
-                return <p key={genre.id}>{genre.name}</p>;
-              })}
-          </div>
-          <div className={styles.voteAndCount}>
-            IMDb Rating:
-            <p className={styles.vote}>{movieInfoData.vote_average}/10</p>
-            <p className={styles.count}>{movieInfoData.vote_count}</p>
-          </div>
-        </div>
-      </div>
-      <div className={styles.summary}>
-        <h3>Summary</h3>
-        <p>{movieInfoData.overview}</p>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

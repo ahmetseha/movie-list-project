@@ -8,7 +8,7 @@
     grid-gap: 20px;
     .image {
       width: 50%;
-      img {
+      .movieInfoImage {
         width: 100%;
       }
     }
@@ -22,8 +22,6 @@
     .head {
       display: flex;
       justify-content: space-between;
-      p {
-      }
     }
     .companies,
     .genres {
@@ -32,7 +30,7 @@
       p + p::before {
         content: ", ";
       }
-      h3 {
+      .componiesHead {
         color: #353d40;
         margin-right: 10px;
       }
@@ -40,14 +38,17 @@
   }
   .voteAndCount {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     grid-gap: 15px;
     .vote,
     .count {
+      text-align: end;
       color: #353d40;
     }
   }
   .summary {
-    h3 {
+    .summaryHead {
       margin-bottom: 10px;
     }
     p {
@@ -55,5 +56,15 @@
     }
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+  .image {
+    width: 100% !important;
+  }
+  .detail {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .infoHead {
+    flex-direction: column;
+  }
 }
